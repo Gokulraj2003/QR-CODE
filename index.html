@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- --------------------- Created By InCoder --------------------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - InCoderWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="QRMainContainer">
+        <div class="title">QR Code Generator</div>
+        <div class="typesOfQR">
+            <button class="QRTypeBtn textBtn active" data-type="text"><i class="fa-solid fa-file-lines"></i> Free
+                Text</button>
+            <button class="QRTypeBtn urlBtn" data-type="url"><i class="fa-solid fa-link"></i> URL</button>
+            <button class="QRTypeBtn emailBtn" data-type="email"><i class="fa-solid fa-at"></i> E-Mail</button>
+            <button class="QRTypeBtn phoneBtn" data-type="phone"><i class="fa-solid fa-phone"></i> Phone</button>
+            <button class="QRTypeBtn smsBtn" data-type="sms"><i class="fa-solid fa-comment-dots"></i> SMS</button>
+        </div>
+        <div class="inputFields">
+            <div class="freeTextInput inputBox active">
+                <textarea placeholder="Enter text to share" class="textareaTag"></textarea>
+            </div>
+            <div class="urlInput inputBox">
+                <input placeholder="Enter URL" type="url" class="inputTag" />
+                <p>Enter Link to open when scanned, e.g. https://example.com/</p>
+            </div>
+            <div class="emailInput inputBox">
+                <p>It opens a new email compose draft when scanned. <b>Note: Fill All Fields in order to generate correct QR Code.</b></p>
+                <input placeholder="Enter E-mail ID" type="email" class="inputTag" />
+                <input placeholder="Enter E-mail Subject" type="text" class="inputTag" />
+                <textarea placeholder="Enter Message" class="textareaTag"></textarea>
+                <p style="float: right;" id="characterCount">20/1000</p>
+            </div>
+            <div class="phoneInput inputBox">
+                <b>Note: In phone number field, first enter country Code and then enter your number.</b>
+                <input style="margin-top: .5rem;" placeholder="Enter Phone Number" type="text" class="inputTag" />
+            </div>
+            <div class="smsInput inputBox">
+                <b>Note: In phone number field, first enter country Code and then enter your number.</b>
+                <input style="margin-top: .5rem;" placeholder="Enter Phone Number" type="text" class="inputTag" />
+                <textarea placeholder="Enter Message" class="textareaTag"></textarea>
+            </div>
+        </div>
+        <div class="QROutputWrapper">
+            <p style="text-align: right!important; width: 100%;" id="demoText">Demo QR Code</p>
+            <img alt="Demo QR Code" src="https://drive.google.com/uc?id=10UBG4dByvUY-D_UrkLih_HfaV_1lozYe&export=download" id="demoQR" />
+            <div id="qrCode"></div>
+            <p id="demoInfo">Fill the fields to generate QR code.</p>
+        </div>
+        <button id="downloadBtn"><i class="fa-solid fa-download"></i> Download QR Code</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
